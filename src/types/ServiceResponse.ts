@@ -1,7 +1,9 @@
 export type ServiceResponseFailureType = 'NOT_FOUND';
 
+type ServiceResponseSuccessType = 'SUCCESS' | 'CREATED';
+
 export type ServiceResponseSuccess<T> = {
-  status: 'SUCCESS', data: T,
+  status: ServiceResponseSuccessType, data: T,
 };
 
 export type ServiceResponseFailure = {

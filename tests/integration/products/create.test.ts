@@ -24,5 +24,10 @@ describe('POST /products', function () {
     }))
     const response = await chai.request(app).post('/products').send(body)
     expect(response.status).to.be.equal(201)
+    expect(response.body).to.be.deep.equal({
+      id: 7,
+      name: 'Martelo de Thor',
+      price: '30 peças de ouro'
+    })
   });
 });

@@ -12,9 +12,16 @@ Promise<ServiceResponse<Omit<Product, 'orderId'>>> => {
     price,
   };
 
-  return { status: 'SUCCESS', data: productCreatedWithoutId };
+  return { status: 'CREATED', data: productCreatedWithoutId };
+};
+
+const getAllProducts = async (): Promise<ServiceResponse<Product[]>> => {
+  const responseModel = await ProductModel.findAll();
+  const allProducts = responseModel.map((product) => product.toJSON());
+  return { status: 'SUCCESS', data: allProducts };
 };
 
 export default {
   createProd,
+  getAllProducts,
 };

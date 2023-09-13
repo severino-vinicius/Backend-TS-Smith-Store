@@ -1,7 +1,8 @@
-type Code = 'SUCCESS' | 'NOT_FOUND';
+type Code = 'SUCCESS' | 'NOT_FOUND' | 'CREATED';
 
 const statusCodeMap: Record<Code, number> = {
-  SUCCESS: 201,
+  SUCCESS: 200,
+  CREATED: 201,
   NOT_FOUND: 404,
 };
 

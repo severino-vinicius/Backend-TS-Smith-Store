@@ -11,6 +11,14 @@ const createProdCont: RequestHandler = async (req, res) => {
     .json(serviceResponse.data);
 };
 
+const getAllProducts: RequestHandler = async (req, res) => {
+  const serviceResponse = await productsService.getAllProducts();
+
+  return res.status(mapStatusCode(serviceResponse.status))
+    .json(serviceResponse.data);
+};
+
 export default {
   createProdCont,
+  getAllProducts,
 };
