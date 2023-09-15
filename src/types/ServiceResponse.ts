@@ -1,4 +1,4 @@
-export type ServiceResponseFailureType = 'NOT_FOUND';
+export type ServiceResponseFailureType = 'NOT_FOUND' | 'UNAUTHORIZED';
 
 type ServiceResponseSuccessType = 'SUCCESS' | 'CREATED';
 
